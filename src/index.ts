@@ -1,9 +1,23 @@
 import { faker } from "@faker-js/faker";
 
+/**
+ * Generate a random integer between min and max
+ *
+ * @param {number} min - bottom limit inclusve
+ * @param {number} max - aupper limit inclusive
+ * @return {number} a random number
+ */
 const getRandomInt = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
+/**
+ * Get a new sequential date based on the last date
+ *
+ * @param {Date} lastDate - the last date
+ * @param {number} maxDaysIncrement - the maximum number of days to increment
+ * @return {Date} a new date
+ */
 const getSequentialDate = (
     lastDate: Date,
     maxDaysIncrement: number = 365
@@ -14,6 +28,14 @@ const getSequentialDate = (
     return newDate;
 };
 
+/**
+ * Generate an employee object
+ *
+ * @param {boolean} isReported - if the employee is reported
+ * @param {string} employeeName - the employee name
+ * @param {string} employeeId - the employee id
+ * @return {Object} the employee object
+ */
 const generateEmployee = (
     isReported = true,
     employeeName: string,
@@ -61,6 +83,12 @@ const generateEmployee = (
     }
 };
 
+/**
+ * Generate a list of employee records
+ *
+ * @param {number} count - the number of employee records to generate
+ * @return {Array} a list of employee records
+ */
 const generateEmployees = (count: number) => {
     const employeTrayectory = [];
 
@@ -88,6 +116,11 @@ const generateEmployees = (count: number) => {
     return employeTrayectory;
 };
 
+/**
+ * Generate the data structure
+ *
+ * @return {Object} the data structure
+ */
 const generateDataStructure = () => ({
     title: "Tier/Rank Advancement",
     fields: [
@@ -112,8 +145,15 @@ const generateDataStructure = () => ({
     employees: generateEmployees(10),
 });
 
+/**
+ * Get the employees trayectory
+ *
+ * @param {number} numberOfEmployees - the number of employee records to generate
+ */
 const getEmployeesTRayectory = (numberOfEmployees: number) => {
+    //let employees = [];
     for (let i = 0; i < numberOfEmployees; i++) {
+        //employees.push(generateDataStructure());
         console.log(generateDataStructure());
     }
 };
