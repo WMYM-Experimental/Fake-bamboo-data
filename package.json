@@ -1,0 +1,19 @@
+{
+  "name": "fake-bamboo-data",
+  "version": "1.0.0",
+  "description": "Fake bamboo data proof of concept",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "fishery": "^2.2.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
