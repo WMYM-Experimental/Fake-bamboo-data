@@ -7,7 +7,7 @@ import { faker } from "@faker-js/faker";
  * @param {number} max - aupper limit inclusive
  * @return {number} a random number
  */
-const getRandomInt = (min: number, max: number) => {
+const getRandomInt = (min: number, max: number): number => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
@@ -29,18 +29,18 @@ const getSequentialDate = (
 };
 
 /**
- * Generate an employee object
+ * Generate an employee record object
  *
  * @param {boolean} isReported - if the employee is reported
  * @param {string} employeeName - the employee name
  * @param {string} employeeId - the employee id
- * @return {Object} the employee object
+ * @return {Object} the employee record object
  */
 const generateEmployee = (
     isReported = true,
     employeeName: string,
     employeeId: string
-) => {
+): Object => {
     const commonFields = {
         id: employeeId,
         employeeStatusDate: faker.date.past().toISOString().split("T")[0],
@@ -98,7 +98,7 @@ const generateEmployees = (count: number) => {
     let isReported = false;
     let togglePoint = getRandomInt(0, count - 1);
 
-    let lastGeneratedDate = new Date(2010, 0, 1);
+    let lastGeneratedDate = new Date(2019, 1, 1);
 
     for (let i = 0; i < count; i++) {
         if (i === togglePoint) {
@@ -121,7 +121,7 @@ const generateEmployees = (count: number) => {
  *
  * @return {Object} the data structure
  */
-const generateDataStructure = () => ({
+const generateDataStructure = (trayectory_lenght: number): Object => ({
     title: "Tier/Rank Advancement",
     fields: [
         { id: "fullName2", type: "text", name: "Last Name, First Name" },
@@ -142,7 +142,7 @@ const generateDataStructure = () => ({
     ],
 
     // get 10 employee records of trayectory
-    employees: generateEmployees(10),
+    employees: generateEmployees(trayectory_lenght),
 });
 
 /**
@@ -152,9 +152,10 @@ const generateDataStructure = () => ({
  */
 const getEmployeesTRayectory = (numberOfEmployees: number) => {
     //let employees = [];
+    let trayectory_lenght = 10;
     for (let i = 0; i < numberOfEmployees; i++) {
         //employees.push(generateDataStructure());
-        console.log(generateDataStructure());
+        console.log(generateDataStructure(trayectory_lenght));
     }
 };
 
