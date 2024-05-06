@@ -1,10 +1,10 @@
 import { faker } from "@faker-js/faker";
 
 /**
- * Generate a random integer between min and max
+ * Generates a random integer between min and max (Both inclusive)
  *
  * @param {number} min - bottom limit inclusve
- * @param {number} max - aupper limit inclusive
+ * @param {number} max - upper limit inclusive
  * @return {number} a random number
  */
 const getRandomInt = (min: number, max: number): number => {
